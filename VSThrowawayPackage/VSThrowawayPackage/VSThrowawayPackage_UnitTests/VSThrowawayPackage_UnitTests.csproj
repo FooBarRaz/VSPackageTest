@@ -81,11 +81,5 @@
   <ItemGroup>
     <None Include="Key.snk" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\VSThrowawayPackage.csproj">
-      <Project>{A9DBEDDD-CEDC-4B49-9930-B356DBF3BD13}</Project>
-      <Name>VSThrowawayPackage</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

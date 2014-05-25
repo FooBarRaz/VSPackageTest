@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using NUnit.Framework;
 
@@ -32,19 +33,14 @@ namespace PNRPService
         }
 
         [Test]
-        public void PeerNameRegistry_RegisterPeerGlobal_RegistersPeerOnGlobalCloud()
+        public void PeerNameRegistry_RegisterPeerLocal_RegisterPeerAllClouds()
         {
             var peer = sut.CreatePeerName("Test", false);
-            var registration = sut.RegisterPeerGlobal(peer, 9714);
+            var registration = sut.RegisterPeer(peer, 9714);
+            Assert.That(registration.PeerName, Is.EqualTo(peer));
+            Assert.That(registration.Port, Is.EqualTo(9714));
+            Assert.That(registration.Cloud.Scope.ToString(), Is.EqualTo("All"));
             Assert.That(registration.IsRegistered(), Is.True);
-            Assert.That(registration.Cloud, Is.EqualTo(sut.GetAvailableClouds().Single(x => x.Name.Contains("Global"))));
-        }
-
-
-        [Test]
-        public void PeerNameRegistry_RegisterPeerLocal_RegisterPeerOnLocalClouds()
-        {
-            
         }
     }
 }

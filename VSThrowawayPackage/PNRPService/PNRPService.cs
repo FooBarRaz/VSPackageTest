@@ -22,5 +22,12 @@ namespace PNRPService
         {
             return new PeerName(name, isSecured? PeerNameType.Secured : PeerNameType.Unsecured);
         }
+
+        public PeerNameRegistration RegisterPeer(PeerName peerName, int port)
+        {
+            var peerNameRegistration = new PeerNameRegistration(peerName, port);
+            peerNameRegistration.Start();
+            return peerNameRegistration;
+        }
     }
 }

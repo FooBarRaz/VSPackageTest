@@ -5,7 +5,7 @@ namespace PNRPService
     public interface IPNRPService
     {
         CloudCollection GetAvailableClouds();
-        PeerNameRegistration RegisterPeerGlobal(PeerName peerName, int port);
         PeerName CreatePeerName(string name, bool isSecured);
+        PeerNameRegistration RegisterPeer(PeerName peerName, int port);
     }
 }

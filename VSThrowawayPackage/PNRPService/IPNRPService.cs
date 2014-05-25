@@ -1,4 +1,5 @@
-﻿using System.Net.PeerToPeer;
+﻿using System;
+using System.Net.PeerToPeer;
 
 namespace PNRPService
 {
@@ -7,5 +8,7 @@ namespace PNRPService
         CloudCollection GetAvailableClouds();
         PeerName CreatePeerName(string name, bool isSecured);
         PeerNameRegistration RegisterPeer(PeerName peerName, int port);
+        PeerNameResolver ResolvePeerName(PeerName peerName);
+        event EventHandler<ResolveCompletedEventArgs> ResolutionCompleted;
     }
 }

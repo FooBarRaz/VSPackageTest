@@ -1,6 +1,6 @@
-﻿using System.Linq;
-using System.Net.NetworkInformation;
-using System.Runtime.InteropServices;
+﻿using System.Net.PeerToPeer;
+using System.Net.PeerToPeer.Collaboration;
+using System.ServiceModel.ComIntegration;
 using NUnit.Framework;
 
 namespace PNRPService
@@ -42,5 +42,21 @@ namespace PNRPService
             Assert.That(registration.Cloud.Scope.ToString(), Is.EqualTo("All"));
             Assert.That(registration.IsRegistered(), Is.True);
         }
+
+        [Ignore("Need to figure out how to test async event raising")]
+        [Test]
+        public void PeerNameRegistry_ResolvePeerName()
+        {
+            PeerNameRecordCollection records = null;
+            sut.ResolutionCompleted += (sender, args) =>
+            {
+                records = args.PeerNameRecordCollection;
+            }; 
+            var peerName = sut.CreatePeerName("Test", false);
+            var registration = sut.RegisterPeer(peerName, 9714); 
+            var peer = sut.ResolvePeerName(peerName);
+            Assert.That(records, Is.Not.Null);
+        }
+
     }
 }

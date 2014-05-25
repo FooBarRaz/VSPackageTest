@@ -1,10 +1,12 @@
-﻿using System.Net.PeerToPeer;
-using System.Runtime.InteropServices.WindowsRuntime;
+﻿using System;
+using System.Net.PeerToPeer;
 
 namespace PNRPService
 {
     public class PNRPService : IPNRPService
     {
+        public PeerNameRecordCollection Records { get; private set; }
+
         public CloudCollection GetAvailableClouds()
         {
             return Cloud.GetAvailableClouds();
@@ -12,8 +14,7 @@ namespace PNRPService
 
         public PeerNameRegistration RegisterPeerGlobal(PeerName peerName, int port)
         {
-            PeerNameRegistration peerNameRegistration = new PeerNameRegistration(peerName, port);
-            peerNameRegistration.Cloud = Cloud.Global;
+            var peerNameRegistration = new PeerNameRegistration(peerName, port) {Cloud = Cloud.Global};
             peerNameRegistration.Start();
             return peerNameRegistration;
         }
@@ -29,5 +30,22 @@ namespace PNRPService
             peerNameRegistration.Start();
             return peerNameRegistration;
         }
+
+        public PeerNameResolver ResolvePeerName(PeerName peerName)
+        {
+            var peerNameResolver = new PeerNameResolver();
+            peerNameResolver.ResolveCompleted += peerNameResolver_ResolveCompleted;
+            peerNameResolver.ResolveAsync(peerName, Guid.NewGuid());
+            return peerNameResolver;
+        }
+
+        void peerNameResolver_ResolveCompleted(object sender, ResolveCompletedEventArgs e)
+        {
+            if (e.Cancelled || e.Error != null || e.PeerNameRecordCollection == null) return;
+            Records = e.PeerNameRecordCollection;
+            ResolutionCompleted(this, e);
+        } 
+
+        public event EventHandler<ResolveCompletedEventArgs> ResolutionCompleted; 
     }
 }

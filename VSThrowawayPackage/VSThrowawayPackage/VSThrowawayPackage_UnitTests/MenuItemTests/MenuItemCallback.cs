@@ -22,6 +22,7 @@ using VSJamSession.VSThrowawayPackage;
 
 namespace VSThrowawayPackage_UnitTests.MenuItemTests
 {
+    [Ignore]
     [TestClass()]
     public class MenuItemTest
     {

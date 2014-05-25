@@ -6,5 +6,6 @@ namespace PNRPService
     {
         CloudCollection GetAvailableClouds();
         PeerNameRegistration RegisterPeerGlobal(PeerName peerName, int port);
+        PeerName CreatePeerName(string name, bool isSecured);
     }
 }

@@ -13,6 +13,7 @@ using System;
 using System.Collections;
 using System.Text;
 using System.Reflection;
+using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VsSDK.UnitTestLibrary;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -36,6 +37,7 @@ namespace VSThrowawayPackage_UnitTests
             Assert.IsNotNull(package as IVsPackage, "The object does not implement IVsPackage");
         }
 
+        [Ignore]
         [TestMethod()]
         public void SetSite()
         {

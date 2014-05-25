@@ -1,4 +1,5 @@
 ﻿using System.Net.PeerToPeer;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace PNRPService
 {
@@ -15,6 +16,11 @@ namespace PNRPService
             peerNameRegistration.Cloud = Cloud.Global;
             peerNameRegistration.Start();
             return peerNameRegistration;
+        }
+
+        public PeerName CreatePeerName(string name, bool isSecured)
+        {
+            return new PeerName(name, isSecured? PeerNameType.Secured : PeerNameType.Unsecured);
         }
     }
 }

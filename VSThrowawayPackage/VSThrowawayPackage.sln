@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30324.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSThrowawayPackage", "VSThrowawayPackage\VSThrowawayPackage.csproj", "{A9DBEDDD-CEDC-4B49-9930-B356DBF3BD13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSThrowawayPackage_IntegrationTests", "VSThrowawayPackage\VSThrowawayPackage_IntegrationTests\VSThrowawayPackage_IntegrationTests.csproj", "{1A071F45-BCF5-46A7-B807-2E05C68EDD7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{20C1EBAF-8E49-47D9-AD90-4C097600E15F}"
+	ProjectSection(SolutionItems) = preProject
+		IntegrationTests.testsettings = IntegrationTests.testsettings
+		UnitTests.testsettings = UnitTests.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSThrowawayPackage_UnitTests", "VSThrowawayPackage\VSThrowawayPackage_UnitTests\VSThrowawayPackage_UnitTests.csproj", "{9CA098EB-137D-4696-BBFE-B807624687D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P2PCommunicationService", "P2PCommunicationService\P2PCommunicationService.csproj", "{6AD90674-5F17-4D52-AE86-93B6E8EF44A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PNRPService", "PNRPService\PNRPService.csproj", "{F737C819-4BCE-4EE0-BD9F-0E5B1765CF07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9DBEDDD-CEDC-4B49-9930-B356DBF3BD13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9DBEDDD-CEDC-4B49-9930-B356DBF3BD13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9DBEDDD-CEDC-4B49-9930-B356DBF3BD13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9DBEDDD-CEDC-4B49-9930-B356DBF3BD13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A071F45-BCF5-46A7-B807-2E05C68EDD7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A071F45-BCF5-46A7-B807-2E05C68EDD7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A071F45-BCF5-46A7-B807-2E05C68EDD7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A071F45-BCF5-46A7-B807-2E05C68EDD7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CA098EB-137D-4696-BBFE-B807624687D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CA098EB-137D-4696-BBFE-B807624687D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CA098EB-137D-4696-BBFE-B807624687D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CA098EB-137D-4696-BBFE-B807624687D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AD90674-5F17-4D52-AE86-93B6E8EF44A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AD90674-5F17-4D52-AE86-93B6E8EF44A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AD90674-5F17-4D52-AE86-93B6E8EF44A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AD90674-5F17-4D52-AE86-93B6E8EF44A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F737C819-4BCE-4EE0-BD9F-0E5B1765CF07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F737C819-4BCE-4EE0-BD9F-0E5B1765CF07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F737C819-4BCE-4EE0-BD9F-0E5B1765CF07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F737C819-4BCE-4EE0-BD9F-0E5B1765CF07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
